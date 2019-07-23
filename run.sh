@@ -1,0 +1,1 @@
+FLASK_APP=Xpressy/app.py flask run

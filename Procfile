@@ -1,1 +1,1 @@
-web: gunicorn Xpressy.app:app
+web: gunicorn xpressy.app:app
