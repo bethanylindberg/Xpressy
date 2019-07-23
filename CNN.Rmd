@@ -1,0 +1,193 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.4
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+# Dependencies to Visualize the model
+# %matplotlib inline
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+# Filepaths, numpy, and Tensorflow
+import os
+import numpy as np
+import keras
+
+# Preprocessing imports
+import glob
+import os.path as path
+import imageio
+from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
+
+# Model Imports
+from keras.models import Sequential
+from keras.layers import Activation, Dropout, Flatten, Dense, Conv2D, MaxPooling2D
+from keras.callbacks import EarlyStopping, TensorBoard
+from sklearn.metrics import accuracy_score, f1_score
+
+from datetime import datetime
+```
+
+```{python}
+# Load the images
+file_paths = []
+labels = []
+targets = []
+
+emotions = ['angry','disgust','fear','happy','neutral','sad','surprise']
+x=0
+e=1
+for emotion in emotions:
+    for filename in glob.glob(f"samples/{emotion}/*.jpg"):
+        path = filename.split('\\')[0]+'/'+filename.split("\\")[1]
+        file_paths.append(path)
+        labels.append(e)
+        targets.append(emotion)
+        x+=1
+    for filename in glob.glob(f"samples/{emotion}/*.png"):
+        path = filename.split('\\')[0]+'/'+filename.split("\\")[1]
+        file_paths.append(path)
+        labels.append(e)
+        targets.append(emotion)
+        x+=1
+    e+=1
+# Load the images
+images = []
+image_size = (350,350)
+
+for path in file_paths:
+    img = load_img(path,target_size = image_size)
+    img = img_to_array(img)
+    images.append(img)
+
+images = np.asarray(images)       
+len(images)        
+```
+
+```{python}
+# Get image size
+image_size = np.asarray([images.shape[1], images.shape[2], images.shape[3]])
+print(image_size)
+```
+
+```{python}
+# Scale
+images = images / 255
+
+#Split into training and testing data
+X = images
+y = labels
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
+
+X_train.shape
+```
+
+```{python}
+from keras.utils import to_categorical
+
+# Prepare y data
+y_binary_train = to_categorical(y_train)
+y_binary_test = to_categorical(y_test)
+```
+
+```{python}
+# Define hyperparamters
+MIN_NEURONS = 20
+MAX_NEURONS = 120
+KERNEL = (3, 3)
+n_layers = 4
+
+# Training hyperparamters
+EPOCHS = 150
+BATCH_SIZE = 20
+PATIENCE = 10
+
+# Determine the # of neurons in each convolutional layer
+steps = np.floor(MAX_NEURONS / (n_layers + 1))
+nuerons = np.arange(MIN_NEURONS, MAX_NEURONS, steps)
+nuerons = nuerons.astype(np.int32)
+
+# Define a model
+model = Sequential()
+
+# Add convolutional layers
+for i in range(0, n_layers):
+    if i == 0:
+        shape = (image_size[0], image_size[1], image_size[2])
+        model.add(Conv2D(nuerons[i], KERNEL, input_shape=shape))
+    else:
+        model.add(Conv2D(nuerons[i], KERNEL))
+
+    model.add(Activation('relu'))
+
+# Add max pooling layer
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten())
+model.add(Dense(MAX_NEURONS))
+model.add(Activation('relu'))
+
+# Add output layer
+model.add(Dense(1))
+model.add(Activation('softmax'))
+
+# Compile the model
+model.compile(loss='sparse_categorical_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+```
+
+```{python}
+# Print a summary of the model
+model.summary()
+```
+
+```{python}
+# Early stopping callback
+early_stopping = EarlyStopping(monitor='loss', min_delta=0, patience=PATIENCE, verbose=2, mode='auto')
+```
+
+```{python}
+# TensorBoard callback
+LOG_DIRECTORY_ROOT = ''
+now = datetime.utcnow().strftime("%Y%m%d%H%M%S")
+log_dir = "{}/run-{}/".format(LOG_DIRECTORY_ROOT, now)
+tensorboard = TensorBoard(log_dir=log_dir, write_graph=True, write_images=True)
+```
+
+```{python}
+# Place the callbacks in a list
+callbacks = [early_stopping, tensorboard]
+```
+
+```{python}
+# Train the model
+model.fit(np.array(X_train), np.array(y_train), epochs=EPOCHS, batch_size=BATCH_SIZE, callbacks=callbacks, verbose=2)
+```
+
+```{python}
+# Make a prediction on the test set
+test_predictions = model.predict(X_test)
+test_predictions = np.round(test_predictions)
+```
+
+```{python}
+# Report the accuracy
+accuracy = accuracy_score(y_test, test_predictions)
+print("Accuracy: " + str(accuracy))
+```
+
+```{python}
+
+```
