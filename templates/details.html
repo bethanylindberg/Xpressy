@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="keywords" content="jquery,tooltip,popup,plugin,css3,open-source,mit-license,extension,overlay">
+    <meta name="description" content="Sebastian Helzle's jQuery Rondell plugin">
+
+
+    <script src="js/modernizr-2.0.6.min.js"></script>
+    <!-- Bootstrap Requirements-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" title="Screen">
+    <link rel="stylesheet" href="css/jquery.rondell.css" type="text/css" media="all" title="Screen">
+</head>
+
+<body>
+
+    <h1 style="text-align: center; font-size: 40px; color: navy;">Emo Xpressy</h1>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="details.html">Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+        </li>
+    </ul>
+
+    <div class="container" >
+        <h2><strong>Introduction</strong></h2>
+
+        <p>Emotions play a very important role in our relations with other people and also in the way we make use of computers.Affective computing is a domain
+            that focuses on user emotions while he or she interacts with computers and applications. As emotional state of a person may affect concentration, task solving and
+            decision making skills, the vision of affective computing is to make systems able
+            to recognize human emotions and influence them in order to enhance productivity
+            and effectiveness of working with computers. 
+            Facial Expression Recognition facilitates our capacity for resilience, motivation, empathy, reasoning, stress management, communication, and our ability to read.
+        </p>
+
+        <h2><strong>Goal</strong></h2>
+        <p>
+            The goal of this project is to explore the field of Facial Expression Recognition(FER) using existing public datasets and create an application that can be used by various professionals to improve their emotional intelligence skills. The app can be used by police officers, social workers, psychologists and other professionals whose job involves a lot of interactions with people. 
+        </p>
+        <p>
+            The app allows an easy fun way to test and improve the emotion recognition ability as the user gets an opportunity to compete against the model. The app has over 100+ stock images, however in a near future users would be able to upload their own images. 
+        </p>
+
+        <h2><strong>Description of problem</strong></h2>
+        <p>
+            While most people can probably identify happy faces, the task becomes more difficult when they need to differentiate between less popular emotionssuch as fear, disgust or contempt. It becomes even more difficult if the decision has to be made fast.
+        </p>
+        <p>
+            Multiple researchers including Timothy Turner (Identifying Emotional Intelligence Competencies Differentiating FBI, 2007) argue that emotional intelligence changes with age and can be improved upon. Although, understanding of other people emotions is only a small part of emotional intelligence, it is a critical skill for many occupations. Unfortunately, the emotional intelligence assessments and training programs are still not readily available for many of these professionals.
+        </p>
+
+        <h2><strong>Data Description</strong></h2>
+        <p>
+            The following datasets were used for training machine learning model:
+            <ul>
+            <li style="list-style-type:circle">
+                Facial Expression Research Group Database (FERG-DB) is a database ofstylized characters with annotated facial expressions. The database contains 55,767 annotated face images of six stylized characters.
+                    <li style="list-style-type:none">
+                        <a href="https://grail.cs.washington.edu/projects/deepexpr/ferg-db.html">https://grail.cs.washington.edu/projects/deepexpr/ferg-db.html</a>
+                    </li>
+                    
+            </li>
+            <li style="list-style-type:circle">
+                Challenges in Representation Learning: Facial Expression Recognition Challenge - Kaggle dataset. The data consists of 35,887 48x48 pixel grayscale images of faces.
+                    <li style="list-style-type:none">
+                        <a href="https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data">https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data</a>
+                    </li>
+            </li>
+            </ul>
+        </p>
+    </div>
+    <div>
+      <br class="clear">
+    </div>
+      <br>
+    <noscript><img src="http://tracking.sebastianhelzle.net/piwik.php?idsite=5" style="border:0" alt=""></noscript>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.mousewheel-3.0.6.min.js"></script>
+    <script src="js/jquery.rondell.js"></script>
+    <script src="js/demohelpers.js"></script>
+    <script type="text/javascript">
+        (function () {
+            $(function () {
+                var carousel;
+                carousel = $("#rondellCarousel > *").rondell({
+                    preset: "carousel"
+                });
+                $(".resize-button").click(function (e) {
+                    e.preventDefault();
+                    return carousel.fitToContainer();
+                });
+            });
+        }).call(this);
+    </script>
+
+
+</body>
+
+</html>
