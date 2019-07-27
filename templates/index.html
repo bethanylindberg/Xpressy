@@ -8,16 +8,19 @@
   <meta name="description" content="Sebastian Helzle's jQuery Rondell plugin">
 
 
-  
+
   <!-- Bootstrap Requirements-->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <!--<script src="js/modernizr-2.0.6.min.js"></script>-->
   <!--CSS Files-->
@@ -26,19 +29,19 @@
 </head>
 
 <body>
-  
-  <h1 style="text-align: center; font-size: 50px; color: navy;">Emo Xpressy</h1>
+
+  <h1 style="text-align: center; font-size: 50px; color:#AC3B61;font-style:Markerfelt;">Xpressy</h1>
   <!--Navbar for Home, Details and About Links-->
   <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link" href="index.html">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="details.html">Details</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="about.html">About Us</a>
-    </li>
+      <li class="nav-item">
+          <a class="nav-link" href="index.html"><strong>Home</strong></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="details.html"><strong>Details</strong></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="about.html"><strong>About Us</strong></a>
+      </li>
   </ul>
 
   <!--Allows user to choose a file from folder-->
@@ -47,14 +50,14 @@
 
   <!--Carousel Begins here-->
   <div id="rondellCarousel" class="hidden">
-    
+
   </div>
   <!--Carousel Ends Here-->
   <br>
   <br>
   <!--Table that shows carousel focussed image related data-->
   <div align="center" class="container" style="color:rgb(138, 131, 119);">
-    <table class="table" >
+    <table class="table">
       <div id='tabledata'></div>
     </table>
 
@@ -81,48 +84,56 @@
         preset: "carousel",
       });
     });
-  </script>  
-  <script>
-  //Gets image_id  of the selected image
-  function readURL(input) {
-    fileName = document.getElementById('fileInputId').files[0].name
-  
-    var $imageContent = document.querySelector("#rondellCarousel");
-    //selects the div container inside rondellCarousel
-    var $imageContentdiv = document.getElementsByClassName('rondell-container');
-    //Clears the current image being displayed
-    while ($imageContent.firstChild) {
-      $imageContent.removeChild($imageContent.firstChild);
+  </script>
+
+  <script type="text/javascript">
+
+    //Gets image_id  of the selected image
+    function readURL(input) {
+      fileName = document.getElementById('fileInputId').files[0].name
+
+      var $imageContent = document.querySelector("#rondellCarousel");
+      //selects the div container inside rondellCarousel
+      var $imageContentdiv = document.getElementsByClassName('rondell-container');
+      //Clears the current image being displayed
+      while ($imageContent.firstChild) {
+        $imageContent.removeChild($imageContent.firstChild);
+      }
+      //Creates a and div tags to populate the container with selected image
+      var aTag = document.createElement('a');
+      var divTag = document.createElement('div');
+      divTag.setAttribute('class', "rondell-container rondell-theme-light rondell-instance-1")
+      divTag.setAttribute('style', "width: 680px; height: 300px;")
+
+      //populates data for selected image
+      var imageVal = 'Stock_Images/Gallery/' + fileName;
+      aTag.setAttribute('href', imageVal)
+      aTag.setAttribute('target', "_blank")
+      aTag.setAttribute('rel', "rondell_1")
+      aTag.setAttribute('title', fileName)
+      aTag.setAttribute('class', "rondell-item rondell-item-focused")
+      aTag.setAttribute('style', "opacity: 1; width: 300px; height: 188px; left: 190px; top: 66px; z-index: 1001; display: block;")
+
+
+      var imgTag = document.createElement('img');
+      imgTag.setAttribute('src', imageVal)
+      imgTag.setAttribute('class', "rondell-item-image rondell-item-resizeable")
+
+      var h5Tag = document.createElement('h5');
+      //Creates a unque id(singleImage) specific to new image chosen
+      aTag.setAttribute('id', 'singleImage');
+      h5Tag.innerHTML = imageVal;
+      aTag.appendChild(imgTag);
+      aTag.appendChild(h5Tag);
+      divTag.appendChild(aTag);
+      $imageContent.appendChild(divTag);
     }
-    //Creates a and div tags to populate the container with selected image
-    var aTag = document.createElement('a');
-    var divTag = document.createElement('div');
-    divTag.setAttribute('class', "rondell-container rondell-theme-light rondell-instance-1")
-    divTag.setAttribute('style', "width: 680px; height: 300px;")
-  
-    //populates data for selected image
-    var imageVal = 'Stock_Images/Gallery/' + fileName;
-    aTag.setAttribute('href', imageVal)
-    aTag.setAttribute('target', "_blank")
-    aTag.setAttribute('rel', "rondell_1")
-    aTag.setAttribute('title', fileName)
-    aTag.setAttribute('class', "rondell-item rondell-item-focused")
-    aTag.setAttribute('style', "opacity: 1; width: 300px; height: 188px; left: 190px; top: 66px; z-index: 1001; display: block;")
-  
-  
-    var imgTag = document.createElement('img');
-    imgTag.setAttribute('src', imageVal)
-    imgTag.setAttribute('class', "rondell-item-image rondell-item-resizeable")
-  
-    var h5Tag = document.createElement('h5');
-    //Creates a unque id(singleImage) specific to new image chosen
-    aTag.setAttribute('id', 'singleImage');
-    h5Tag.innerHTML = imageVal;
-    aTag.appendChild(imgTag);
-    aTag.appendChild(h5Tag);
-    divTag.appendChild(aTag);
-    $imageContent.appendChild(divTag);
-  }
-</script>
+  </script>
 </body>
+<hr>
+<footer>
+   
+    <small>Disclaimer: JQuery Plugin used in this project is under MIT opensource License.</small>
+        
+</footer>
 </html>

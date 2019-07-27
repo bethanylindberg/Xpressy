@@ -153,3 +153,45 @@ observer.observe(rondellCarousel, {
   attributeFilter: ['style']
 });
 
+//Gets image_id  of the selected image
+/*
+function readURL(input) {
+  fileName = document.getElementById('fileInputId').files[0].name
+
+  var $imageContent = document.querySelector("#rondellCarousel");
+  //selects the div container inside rondellCarousel
+  var $imageContentdiv = document.getElementsByClassName('rondell-container');
+  //Clears the current image being displayed
+  while ($imageContent.firstChild) {
+    $imageContent.removeChild($imageContent.firstChild);
+  }
+  //Creates a and div tags to populate the container with selected image
+  var aTag = document.createElement('a');
+  var divTag = document.createElement('div');
+  divTag.setAttribute('class', "rondell-container rondell-theme-light rondell-instance-1")
+  divTag.setAttribute('style', "width: 680px; height: 300px;")
+
+  //populates data for selected image
+  var imageVal = 'Stock_Images/Gallery/' + fileName;
+  aTag.setAttribute('href', imageVal)
+  aTag.setAttribute('target', "_blank")
+  aTag.setAttribute('rel', "rondell_1")
+  aTag.setAttribute('title', fileName)
+  aTag.setAttribute('class', "rondell-item rondell-item-focused")
+  aTag.setAttribute('style', "opacity: 1; width: 300px; height: 188px; left: 190px; top: 66px; z-index: 1001; display: block;")
+
+
+  var imgTag = document.createElement('img');
+  imgTag.setAttribute('src', imageVal)
+  imgTag.setAttribute('class', "rondell-item-image rondell-item-resizeable")
+
+  var h5Tag = document.createElement('h5');
+  //Creates a unque id(singleImage) specific to new image chosen
+  aTag.setAttribute('id', 'singleImage');
+  h5Tag.innerHTML = imageVal;
+  aTag.appendChild(imgTag);
+  aTag.appendChild(h5Tag);
+  divTag.appendChild(aTag);
+  $imageContent.appendChild(divTag);
+}
+*/

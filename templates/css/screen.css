@@ -91,7 +91,7 @@ legend {
   background-color: #46a546;
 }
 .label.notice {
-  background-color: #62cffc;
+  background-color: #AC3B61;
 }
 .label.inverse {
   background-color: black;
@@ -315,7 +315,7 @@ legend {
 }
 .btn.info,
 .alert-message.info {
-  background-color: #339bb9;
+  background-color: #AC3B61;
 }
 .btn .close,
 .alert-message .close {
@@ -346,7 +346,7 @@ legend {
 }
 .btn.primary {
   color: white;
-  background-color: #0064cd;
+  background-color: #AC3B61;
 }
 .btn.disabled {
   cursor: default;
@@ -570,7 +570,7 @@ pre {
 .nav-pills li.active a, .nav-pills li.active a:hover {
   text-shadow: 0 1px 1px #555555;
   color: white;
-  background-color: #0069d6;
+  background-color: #AC3B61;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -672,7 +672,7 @@ body {
 }
 
 a {
-  color: #0d3a8b;
+  color: #AC3B61;
   text-decoration: none;
 }
 a:hover {
@@ -693,7 +693,7 @@ hr {
 
 p {
   margin: 0.6em 0;
-  color:gray;
+  color:black;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -708,7 +708,7 @@ h1 {
 
 h2 {
   font-size: 1.8em;
-  color: gray;
+  color: black;
 }
 
 h3 {
@@ -763,7 +763,7 @@ img.inline {
 }
 
 .options th {
-  background: #222;
+  background: black;
   border: 1px solid #111;
   padding: 6px 10px;
   color: #eee;
@@ -813,7 +813,7 @@ img.inline {
 }
 
 .pageHeader {
-  background: #267be4;
+  background: #AC3B61;
   color: #fafafa;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #337edc), color-stop(100%, #0a5abf));
   background: -webkit-linear-gradient(#337edc, #0a5abf);
@@ -862,25 +862,42 @@ li {
 }
 
 table,th, td {
-  border: 1px solid wheat;
+  border: 1px solid black;
   padding: 4px;
   border-spacing: 5px;
-
+  font: black;
+  
+  color: #000;
 }
 
 th {
   text-align: center;
-  font-weight: bold;
-  font-size: 15px;
-  
+  color: #000;
+  font-weight:bold;
 }
 
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
 ul.nav.justify-content-center {
   color:#6B7A8F;
   background: #6B7A8F
+}
+
+.nav-link {
+  color: #AC3B61;
+}
+
+li.nav-item:hover {
+  font:#AC3B61;
+}
+
+small {
+  padding-left: 500px;
+  font:darkgray
+}
+
+hr {
+  background: #000
 }
