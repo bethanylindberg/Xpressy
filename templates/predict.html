@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="no-js" style="color:black">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="keywords" content="jquery,tooltip,popup,plugin,css3,open-source,mit-license,extension,overlay">
+   
+
+
+    <script src="../static/js/modernizr-2.0.6.min.js"></script>
+    <!-- Bootstrap Requirements-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../static/css/screen.css" type="text/css" media="all" title="Screen">
+    <link rel="stylesheet" href="../static/css/jquery.rondell.css" type="text/css" media="all" title="Screen">
+</head>
+
+<body>
+
+    <h1 style="text-align: center; font-size: 40px; color: navy;">Xpressy</h1>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="home"><strong>Home</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="details"><strong>Details</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="about"><strong>About Us</strong></a>
+        </li>
+    </ul>
+    <br class="clear">
+    <br>
+
+    <div style="padding-left:240px; font-size:20px;">
+        <p>
+            <strong>Thank you for uploading your image. How did the model do?</strong>
+        </p>
+    </div>
+    <img width="400px" height="250px" src="{{imagesource}}" />
+    <hr>
+    <br>
+   
+    <div class="row" >
+      <div align="center" class="container" style="color:rgb(138, 131, 119);">
+        <table class="table">
+          <div id='tabledata'>{{ pred_dict | safe}}</div>
+        </table>
+      </div>
+    </div> 
+  </div>
+   
+
+
+    <noscript><img src="http://tracking.sebastianhelzle.net/piwik.php?idsite=5" style="border:0" alt=""></noscript>
+    <script src="../static/js/jquery-1.9.1.min.js"></script>
+    <script src="../static/js/jquery.mousewheel-3.0.6.min.js"></script>
+    <script src="../static/js/jquery.rondell.js"></script>
+    <script src="../static/js/demohelpers.js"></script>
+    <script type="text/javascript">
+        (function () {
+            $(function () {
+                var carousel;
+                carousel = $("#rondellCarousel > *").rondell({
+                    preset: "carousel"
+                });
+                $(".resize-button").click(function (e) {
+                    e.preventDefault();
+                    return carousel.fitToContainer();
+                });
+
+            });
+
+        }).call(this);
+    </script>
+
+
+</body>
+<hr>
+<footer>
+   
+    <small>Disclaimer: JQuery Plugin used in this project is under MIT opensource License.</small>
+        
+</footer>
+</html>

@@ -1,2 +1,1 @@
-# Xpressy
-Emotion recognition machine learning project
+# FER_Project

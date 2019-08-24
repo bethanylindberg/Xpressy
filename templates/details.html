@@ -5,10 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="content-language" content="en">
     <meta name="keywords" content="jquery,tooltip,popup,plugin,css3,open-source,mit-license,extension,overlay">
-    <meta name="description" content="Sebastian Helzle's jQuery Rondell plugin">
+    
 
 
-    <script src="js/modernizr-2.0.6.min.js"></script>
+    <script src="../static/js/modernizr-2.0.6.min.js"></script>
     <!-- Bootstrap Requirements-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -22,26 +22,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" title="Screen">
-    <link rel="stylesheet" href="css/jquery.rondell.css" type="text/css" media="all" title="Screen">
+    <link rel="stylesheet" href="../static/css/screen.css" type="text/css" media="all" title="Screen">
+    <link rel="stylesheet" href="../static/css/jquery.rondell.css" type="text/css" media="all" title="Screen">
 </head>
 
 <body>
 
-    <h1 style="text-align: center; font-size: 40px; color: navy;">Emo Xpressy</h1>
+    <h1 style="text-align: center; font-size: 40px; color:#AC3B61;">Xpressy</h1>
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="home"><strong>Home</strong></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="details.html">Details</a>
+            <a class="nav-link" href="details"><strong>Details</strong></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
+            <a class="nav-link" href="about"><strong>About Us</strong></a>
         </li>
     </ul>
 
-    <div class="container" >
+    <div class="container">
+        <!--Intro-->
         <h2><strong>Introduction</strong></h2>
 
         <p>Emotions play a very important role in our relations with other people and also in the way we make use of computers.Affective computing is a domain
@@ -52,22 +53,7 @@
             Facial Expression Recognition facilitates our capacity for resilience, motivation, empathy, reasoning, stress management, communication, and our ability to read.
         </p>
 
-        <h2><strong>Goal</strong></h2>
-        <p>
-            The goal of this project is to explore the field of Facial Expression Recognition(FER) using existing public datasets and create an application that can be used by various professionals to improve their emotional intelligence skills. The app can be used by police officers, social workers, psychologists and other professionals whose job involves a lot of interactions with people. 
-        </p>
-        <p>
-            The app allows an easy fun way to test and improve the emotion recognition ability as the user gets an opportunity to compete against the model. The app has over 100+ stock images, however in a near future users would be able to upload their own images. 
-        </p>
-
-        <h2><strong>Description of problem</strong></h2>
-        <p>
-            While most people can probably identify happy faces, the task becomes more difficult when they need to differentiate between less popular emotionssuch as fear, disgust or contempt. It becomes even more difficult if the decision has to be made fast.
-        </p>
-        <p>
-            Multiple researchers including Timothy Turner (Identifying Emotional Intelligence Competencies Differentiating FBI, 2007) argue that emotional intelligence changes with age and can be improved upon. Although, understanding of other people emotions is only a small part of emotional intelligence, it is a critical skill for many occupations. Unfortunately, the emotional intelligence assessments and training programs are still not readily available for many of these professionals.
-        </p>
-
+        <!--Data Description-->
         <h2><strong>Data Description</strong></h2>
         <p>
             The following datasets were used for training machine learning model:
@@ -75,15 +61,153 @@
             <li style="list-style-type:circle">
                 Facial Expression Research Group Database (FERG-DB) is a database ofstylized characters with annotated facial expressions. The database contains 55,767 annotated face images of six stylized characters.
                     <li style="list-style-type:none">
-                        <a href="https://grail.cs.washington.edu/projects/deepexpr/ferg-db.html">https://grail.cs.washington.edu/projects/deepexpr/ferg-db.html</a>
+                        <a href="https://grail.cs.washington.edu/projects/deepexpr/ferg-db.html"><strong>Link: https://grail.cs.washington.edu/projects/deepexpr/ferg-db.html</strong></a>
                     </li>
                     
             </li>
             <li style="list-style-type:circle">
                 Challenges in Representation Learning: Facial Expression Recognition Challenge - Kaggle dataset. The data consists of 35,887 48x48 pixel grayscale images of faces.
                     <li style="list-style-type:none">
-                        <a href="https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data">https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data</a>
+                        <a href="https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data"><strong>Link: https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data</strong></a>
                     </li>
+            </li>
+            </ul>
+        </p>
+
+        <!--Goals-->
+        <h2><strong>Goal</strong></h2>
+        <p>
+            The goal of this project is to explore the field of Facial Expression Recognition (FER) using existing public datasets and create an application that can be used by various user groups to improve their emotional intelligence skills. The app can be used by police officers, social workers, psychologists and other professionals whose job involves a lot of interactions with people.
+        </p>
+        <p>
+            The app allows an easy fun way to test and improve the emotion recognition ability as the user get an opportunity to compete against the model. The app has over 100+ stock images, however in a near future users would be able to upload their own images. As this is implemented the uploaded images will allow a more extensive training model. We stood up a 100tb server to house the images.
+        </p>
+
+        <h2><strong>Description of problem</strong></h2>
+        <p>
+            While most people can probably identify happy faces, the task becomes more difficult when they need to differentiate between less popular emotions such as fear, disgust or contempt. It becomes even more difficult if the decision must be made fast.
+        </p>
+        <p>
+            Multiple researchers including Timothy Turner (Identifying Emotional Intelligence Competencies Differentiating FBI, 2007) argue that emotional intelligence changes with age and can be improved upon. Although, understanding of other people emotions is only a small part of emotional intelligence, it is a critical skill for many occupations. Unfortunately, the emotional intelligence assessments and training programs are still not readily available for many of these professionals.
+        </p>
+
+        
+        <!--Trained Model-->
+        <h2><strong>Trained Model</strong></h2>
+        <br>
+        <div class="row">
+            <div class="column">
+                <img src="../static/Stock_Images/model_summary1.png" style="width:100%;"><img>
+            </div>
+            <div class="column">
+                <img src="../static/Stock_Images/model_summary2.png" style="width:100%;height:110%;"><img>
+            </div>
+        </div>
+
+        <br>
+        <!--Confusion Matrix-->
+        <h2><strong>Confusion Matrix</strong></h2>
+        <br>
+        <div class="row">
+            <div class="column">
+                <img src="../static/Stock_Images/confusion.png" style="width:80%;"><img>
+            </div>
+        </div>
+        <br>
+        <h2><strong>Model Inaccuracies</strong></h2>
+        <br>
+        <div class="row">
+            <div class="column">
+                <img src="../static/Stock_Images/limitation1.jpg" style="width:100%;"><img>
+            </div>
+            <div class="column">
+                    <img src="../static/Stock_Images/limitation2.jpg" style="width:100%;"><img>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!--Future Of the Project-->
+        <h2><strong>Future Of the Project</strong></h2>
+        <p>
+            In the future we are hoping to provide real time FER to our users utilizing our server based technologies and cloud computing. The app can improve lives of many visually impaired people as we are exploring ways to utilize the app to recognize facial expressions of the people around them.  As visually impaired user interact with someone the software would advise the user of the emotional state of the people they are interacting with.
+        </p>
+        <br>
+
+        <!--Dependancies-->
+        <h2><strong>Dependancies</strong></h2>
+        <p>
+            <ul>
+                    <li style="list-style-type:none">
+                            import glob<br>
+                            import os.path as path<br>
+                            import imageio<br>
+                            from datetime import datetime<br>
+                            import numpy as np<br>
+                            import keras<br>
+                            import pysftp<br>
+                            import cv2<br>
+                            from tensorflow.keras.models import Sequential<br>
+                            from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D, BatchNormalization
+                            <br>from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
+                            <br>from sklearn.metrics import accuracy_score, f1_score, train_test_split, classification_report,confusion_matrix
+                            <br>from tensorflow.keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
+                            <br>from PIL import Image
+                            <br>import seaborn as sns
+
+                    </li>
+            </ul>
+        </p>
+        <br>
+        <!--Infrastructure-->
+        <h2><strong>Xpressy Infrastructure</strong></h2>
+        <p>
+            We stood up a Linux server to allow the collection of Images from our User base. The intention is that our users will sign a disclaimer allowing us to use their images for testing data. On the server we built GPU processing the intention is to intake images process the image and depending on the prediction the image is staged in our system before becoming part of the training data.
+        </p>
+        <br>
+        <div class="row">
+            <div class="column">
+                <img src="../static/Stock_Images/IF1.png" style="width:100%;"><img>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="column">
+                <img src="../static/Stock_Images/IF2.png" style="width:100%;"><img>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="column">
+                <img src="../static/Stock_Images/IF3.png" style="width:100%;"><img>
+            </div>
+        </div>
+
+
+
+        <!--Credits-->
+        <h2><strong>Acknowledgements</strong></h2>
+        <p>
+            Credits to those who helped our project with their contributions:
+            <ul>
+            <li style="list-style-type:circle">
+                Data Sources: 
+                    <li style="list-style-type:none">
+                        Facial Expression Research Group
+                    </li>
+                    <li style="list-style-type:none">
+                        Kaggle
+                    </li>
+                    
+            </li>
+            <li style="list-style-type:circle">
+                Software Sources: Rodell jQuery Plugin
+                    <li style="list-style-type:none">
+                        Mr.Sebastian Helzle       
+                    </li>
+                    <li style="list-style-type:none">
+                        <a href="https://github.com/Sebobo/jquery.rondell"><strong>Github Link: https://github.com/Sebobo/jquery.rondell</strong></a> 
+                    </li>
+                        
             </li>
             </ul>
         </p>
@@ -92,11 +216,11 @@
       <br class="clear">
     </div>
       <br>
-    <noscript><img src="http://tracking.sebastianhelzle.net/piwik.php?idsite=5" style="border:0" alt=""></noscript>
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/jquery.mousewheel-3.0.6.min.js"></script>
-    <script src="js/jquery.rondell.js"></script>
-    <script src="js/demohelpers.js"></script>
+    
+    <script src="../static/js/jquery-1.9.1.min.js"></script>
+    <script src="../static/js/jquery.mousewheel-3.0.6.min.js"></script>
+    <script src="../static/js/jquery.rondell.js"></script>
+    <script src="../static/js/demohelpers.js"></script>
     <script type="text/javascript">
         (function () {
             $(function () {
@@ -114,5 +238,10 @@
 
 
 </body>
-
+<hr>
+<footer>
+   
+    <small>Disclaimer: JQuery Plugin used in this project is under MIT opensource License.</small>
+        
+</footer>
 </html>
