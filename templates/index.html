@@ -34,6 +34,7 @@
   <!--Navbar for Home, Details and About Links-->
   <ul class="nav justify-content-center">
       <li class="nav-item">
+<<<<<<< HEAD
           <a class="nav-link" href="home"><strong>Home</strong></a>
       </li>
       <li class="nav-item">
@@ -41,10 +42,20 @@
       </li>
       <li class="nav-item">
           <a class="nav-link" href="about"><strong>About Us</strong></a>
+=======
+          <a class="nav-link" href="index.html"><strong>Home</strong></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="details.html"><strong>Details</strong></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="about.html"><strong>About Us</strong></a>
+>>>>>>> 25266a377504284e9919c5d72f04eefe98e53c8f
       </li>
   </ul>
 
   <!--Allows user to choose a file from folder-->
+<<<<<<< HEAD
   <form action="" method=post enctype=multipart/form-data>
     <input style="padding-left:30px;content:Choose a Picture;" type=file name=file>
     <br><br>
@@ -52,6 +63,9 @@
   </form>
 
   <!-- <input style="padding-left:30px;content:Choose a Picture;" id="fileInputId" type='file' onchange="readURL(this);" /> -->
+=======
+  <input style="padding-left:30px;content:Choose a Picture;" id="fileInputId" type='file' onchange="readURL(this);" />
+>>>>>>> 25266a377504284e9919c5d72f04eefe98e53c8f
   <br>
 
   <!--Carousel Begins here-->
@@ -74,12 +88,21 @@
 
   <!--<noscript><img src="http://tracking.sebastianhelzle.net/piwik.php?idsite=5" style="border:0" alt=""></noscript>-->
   <!--Includes requirements-->
+<<<<<<< HEAD
   <script src="../static/js/jquery-1.9.1.min.js"></script>
   <script src="../static/js/jquery.mousewheel-3.0.6.min.js"></script>
   <script src="../static/js/jquery.rondell.js"></script>
   <script src="../static/js/demohelpers.js"></script>
   <script type="text/javascript" src="../static/js/image_data_var.js"></script>
   <script type="text/javascript" src="../static/js/image_data.js"></script>
+=======
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery.mousewheel-3.0.6.min.js"></script>
+  <script src="js/jquery.rondell.js"></script>
+  <script src="js/demohelpers.js"></script>
+  <script type="text/javascript" src="js/image_data_var.js"></script>
+  <script type="text/javascript" src="js/image_data.js"></script>
+>>>>>>> 25266a377504284e9919c5d72f04eefe98e53c8f
 
   <!--funtion for Rondell Carousel Display-->
   <script type="text/javascript">
@@ -112,7 +135,11 @@
       divTag.setAttribute('style', "width: 680px; height: 300px;")
 
       //populates data for selected image
+<<<<<<< HEAD
       var imageVal = '../static/Stock_Images/Gallery/' + fileName;
+=======
+      var imageVal = 'Stock_Images/Gallery/' + fileName;
+>>>>>>> 25266a377504284e9919c5d72f04eefe98e53c8f
       aTag.setAttribute('href', imageVal)
       aTag.setAttribute('target', "_blank")
       aTag.setAttribute('rel', "rondell_1")
@@ -120,7 +147,11 @@
       aTag.setAttribute('class', "rondell-item rondell-item-focused")
       aTag.setAttribute('style', "opacity: 1; width: 300px; height: 188px; left: 190px; top: 66px; z-index: 1001; display: block;")
 
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 25266a377504284e9919c5d72f04eefe98e53c8f
       var imgTag = document.createElement('img');
       imgTag.setAttribute('src', imageVal)
       imgTag.setAttribute('class', "rondell-item-image rondell-item-resizeable")
