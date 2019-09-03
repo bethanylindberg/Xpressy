@@ -26,13 +26,13 @@ Facial Expression Research Group Database (FERG-DB) is a database of stylized ch
 
 The python script will read the below folder structure, so your data must be structured like below.
 
-![folders](images/folders.PNG)
+![folders](images/folders.png)
 
 ## Install requirements
 
 Run the below in CMD or Git Bash to ensure you have all dependencies installed.
 
-![requirements](images/pipinstall.PNG)
+![requirements](images/pipinstall.png)
 
 ## Run python script
 
