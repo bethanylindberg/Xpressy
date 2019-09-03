@@ -76,8 +76,8 @@ images = np.asarray(images)
 # Get image size
 image_size = np.asarray([images.shape[1], images.shape[2], images.shape[3]])
 
-df = pd.DataFrame(list(zip(targets, labels,images,file_paths)),columns=["emotions","labels","images","paths"])
-df.to_csv('emotions.csv')
+# df = pd.DataFrame(list(zip(targets, labels,images,file_paths)),columns=["emotions","labels","images","paths"])
+# df.to_csv('emotions.csv')
 
 # Scale
 images = images / 255
@@ -90,8 +90,6 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=1)
 X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.111, random_state=1)
 
-X_train.shape
-
 
 from keras.utils import to_categorical
 num_classes=7
@@ -99,8 +97,8 @@ num_classes=7
 # Prepare y data
 y_binary_train = to_categorical(y_train, num_classes=num_classes, dtype='float32')
 y_binary_test = to_categorical(y_test, num_classes=num_classes, dtype='float32')
-# Define hyperparamters
 
+# Define hyperparamters
 KERNEL = (3, 3)
 num_features = 64
 # Training hyperparamters
@@ -108,7 +106,6 @@ EPOCHS = 500
 BATCH_SIZE = 500
 PATIENCE = 3
 width, height = 48,48
-
 
 #desinging the CNN
 model = Sequential()
@@ -184,4 +181,4 @@ accuracy = accuracy_score(y_test, test_predictions)
 print("Accuracy: " + str(accuracy))
 
 # Save the model
-model.save("emotion_model_trained5.h5")
+model.save("emotion_model_trained.h5")
